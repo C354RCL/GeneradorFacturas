@@ -1,0 +1,64 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    padding-top: 10%;
+    background-color:  #eef3f3 ;
+    padding: 5% 12%;
+}
+
+.container{
+    display:flexbox;
+    padding: 10px 50px;
+    background-color: white;
+    font-size: 17px;
+    width: 92%;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.75);
+    margin: 0;
+}
+
+.form{
+    display: flex;
+    width: 92%;
+}
+
+.encabezados {
+    width: 100%;
+    text-align: center;
+}
+
+.inputs {
+    margin-bottom: 10px;
+    width: 30rem;
+    margin: 0 20px;
+}
+
+.inputs input{
+    width: 90%;
+    border-radius: 5px;
+    border-style:ridge;
+}   
+
+.btn{
+    width: 90%;
+}
+
+.btnEnviar{
+    margin: 15px 45%;
+    height: 35px;
+    font-size: medium;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:  #21dd26;
+}
+
+.btnEnviar:hover{
+    background-color: #21dd26;
+    color: white;
+}
