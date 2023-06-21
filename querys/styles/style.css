@@ -1,0 +1,40 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    width: 98%;
+}
+
+body h1{
+    width: 95%;
+    text-align: left;
+    margin: 30px 5%;
+}
+
+.container{
+    width: fit-content;
+    margin: 0 5%;
+}
+
+.encabezados {
+    height: 25px;
+    padding: 2px;
+    background-color: #84f988;
+    margin-right: 10px;
+    font-size: 17px;
+    border-radius: 5px;
+    border-color: black;
+    margin-bottom: 10px;
+}
+
+.fila{
+    margin-top: 5px;
+}
+
+.registro {
+    background-color: rgb(225, 230, 235);
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 5px;
+}
