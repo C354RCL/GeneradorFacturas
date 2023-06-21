@@ -3,29 +3,34 @@
 }
 
 body{
-    width: 98%;
+    margin: 0;
+    max-width: fit-content;
 }
 
 body h1{
-    width: 95%;
-    text-align: left;
-    margin: 30px 5%;
+    width: 100%;
+    text-align: center;
+    margin: 30px;
 }
 
 .container{
     width: fit-content;
-    margin: 0 5%;
+    margin: 0 2%;
+}
+
+.tabla{
+    margin-left: 0;
+    margin-right: 30px;
 }
 
 .encabezados {
     height: 25px;
     padding: 2px;
     background-color: #84f988;
-    margin-right: 10px;
     font-size: 17px;
     border-radius: 5px;
     border-color: black;
-    margin-bottom: 10px;
+    text-align: center;
 }
 
 .fila{
@@ -34,7 +39,7 @@ body h1{
 
 .registro {
     background-color: rgb(225, 230, 235);
-    margin-right: 10px;
+    text-align: center;
     font-size: 15px;
     padding: 5px;
 }

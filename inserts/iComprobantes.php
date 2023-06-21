@@ -5,6 +5,9 @@
     $version = $_POST['version'];
     print("Version: ".$version.'<br>');
 
+    $serie = $_POST['serie'];
+    print("Serie: ".$serie.'<br>');
+
     $folio = $_POST['folio'];
     print("Folio: ".$folio.'<br>');
 
@@ -62,6 +65,7 @@
     $rfcReceptor = $_POST['rfcReceptor'];
     print("RFC Receptor: ".$rfcReceptor.'<br>');
 
+    $sql = 'INSERT INTO comprobantes VALUES('$id','$version', '$serie', '$folio', '$fecha', '$sello', '$formPago', '$noCertificado', '$certificado', '$condPago', '$subtotal', '$descuento', '$moneda', '$tipoCambio', '$exportacion', '$metPago', '$lugarExpe', '$confirmacion', '$rfcEmisor', '$rfcReceptor');';
     include('../Controlador.php');
     $con = Conectar();
     $res = Ejecutar($con, $sql);
