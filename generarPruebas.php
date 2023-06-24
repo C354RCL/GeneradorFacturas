@@ -10,6 +10,8 @@
     print("Datos de vista 'comprobantescompleta'<br>");
     print_r($fila);
 
+
+
     //Seleccionamos el id del comprobante 
     $sql = "SELECT id FROM comprobantescompleta WHERE folio = 1584789415;";
     $result = Ejecutar($con, $sql);
@@ -18,6 +20,8 @@
     //Asiganmos a una variable el id resultante de la consulta anterior
     $resultID = $fila[0];
     print("<br><br>ID<br>".$resultID);
+
+    
 
     //sql que manda a llamar la vista comprobantesconceptoscompleta cuando el idcomprobantes sea igual a '$resultID'
     $sql = "SELECT * FROM `comprobantesconceptoscompleta` WHERE idComprobantes = $resultID;";
