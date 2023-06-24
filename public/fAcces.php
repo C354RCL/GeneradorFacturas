@@ -1,17 +1,16 @@
 <?php
-    $user = $_POST['user'];
+    $rfc = $_POST['rfc'];
     $pwd = $_POST['pwd'];
 
-    
     include("../Controlador.php");
     
     $con = Conectar();
-    $sql = "SELECT * FROM cuentas WHERE user = '$user';";
+    $sql = "SELECT * FROM cuentas WHERE rfc = '$rfc';";
     $result = Ejecutar($con, $sql);
     
     $nFilas = mysqli_num_rows($result);
     
-    $user = mysqli_real_escape_string($con, $user);
+    $rfc = mysqli_real_escape_string($con, $rfc);
     $pwd = mysqli_real_escape_string($con, $pwd);
     if($nFilas == 1){
         print("\nEl usuario existe\n");
@@ -24,7 +23,7 @@
                 if($fila[4] == 0){
                     print("\nSin bloqueo\n");
                     print("Entrar");
-                    $sql4 = "UPDATE cuentas SET intentos = 0 WHERE user = '$user';";
+                    $sql4 = "UPDATE cuentas SET intentos = 0 WHERE rfc = '$rfc';";
                     $result = Ejecutar($con, $sql4);
                     if($fila[2] == "U"){
                         // print("\nUsuario");
@@ -45,10 +44,10 @@
             }
         }else{
             print("\nContraseña incorrecta\n");
-            $sql2 = "UPDATE cuentas SET intentos = intento+1 WHERE user = '$user';";
+            $sql2 = "UPDATE cuentas SET intentos = intento+1 WHERE rfc = '$rfc';";
             $result = Ejecutar($con, $sql2);
             if($fila[5] == 3) {
-                $sql3 = "UPDATE cuentas SET bloqueo = 1 WHERE user = '$user';";
+                $sql3 = "UPDATE cuentas SET bloqueo = 1 WHERE rfc = '$rfc';";
                 $result = Ejecutar($con, $sql3);
             }
         }

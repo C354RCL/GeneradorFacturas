@@ -1,0 +1,48 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    margin: 5rem 0 2rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.form{
+    margin-left: 32%;
+    background-color: rgb(255, 255, 255);
+    width: 25%;
+    padding: 10px 5%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.75);
+}
+
+.form label{
+    width: 90%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.form input{
+    border-radius: 5px;
+    border-style: solid;
+    margin: 15px 0 15px 0;
+    width: 21rem;
+    height: 25px;
+}
+
+.generar{
+    height: 40px;
+    margin-left: 38%;
+    background-color: white;
+    border-color: #84f988;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.generar:hover{
+    background-color: #84f988;
+    color: white;
+}
