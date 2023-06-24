@@ -144,7 +144,7 @@
     $pdf->CELL(20, 5, 'Descuento', 1, '1', 'C');
 
     
-    for( $i = 0; $i <= 5; $i++)
+    for( $i = 0; $i <= 20; $i++)
     {
         $pdf->SETX(5);
         //Datos
