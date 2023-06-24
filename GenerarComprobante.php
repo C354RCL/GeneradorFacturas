@@ -179,6 +179,9 @@
 
     }
 
+    //pie de pagina
+    $pdf-> image('./img/QR.png', 100, 200, 30, 30);
+
     $pdf->Output();
 
 
