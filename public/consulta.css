@@ -2,20 +2,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body{
-    margin: 0;
-    max-width: fit-content;
-}
-
 body h1{
-    width: 100%;
+    max-width: 100%;
     text-align: center;
-    margin: 30px;
 }
 
 .container{
-    width: fit-content;
-    margin: 0 2%;
+    width: 90%;
+    margin: 0 10rem;
 }
 
 .tabla{
