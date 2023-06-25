@@ -67,7 +67,7 @@ $xml = '<?xml version="1.0" encoding="utf-8"?>
 ';
 
 $nombre = $fila[3].'.xml';
-$archivo = fopen('./Files/'.$nombre, 'a +');
+$archivo = fopen('./Files/'.$nombre, 'w +');
 fwrite($archivo, $xml);
 fclose($archivo);
 
