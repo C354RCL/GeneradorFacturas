@@ -2,10 +2,8 @@
     include("Controlador.php");
     $con = Conectar();
 
-    $folio = $_POST['folio'];
-
     //Vista Comprobantes Completa
-    $sql = "SELECT * FROM ComprobantesCompleta WHERE folio = $folio;";
+    $sql = "SELECT * FROM ComprobantesCompleta WHERE folio = 1584789415;";
     $result = Ejecutar($con, $sql);
     //Obtenemos el array con el resultado del query
     $fila = mysqli_fetch_row($result);
@@ -14,7 +12,7 @@
     $ID = $fila[0];
 
     //Conceptos del comprobante
-    //sql que manda a llamar la vista comprobantesconceptoscompleta cuando el idcomprobantes sea igual a '$ID'
+    //sql que manda a llamar la vista comprobantesconceptoscompleta cuando el idcomprobantes sea igual a '$resultID'
     $sql = "SELECT * FROM `comprobantesconceptoscompleta` WHERE idComprobantes = $ID;";
     $result = Ejecutar($con, $sql);
     
@@ -302,8 +300,7 @@
     $pdf->SETXY(70, 275);
     $pdf->CELL(65, 3, 'Este documento es una representacion impresa de un CFDI','' , '', 'C');
 
-    print("Comprobante creado correctamente");
-    $pdf->Output('F', './Files/'.$folio.'.pdf');
+    $pdf->Output('F', './Files/'.$fila[3].'.pdf');
 
 
     Desconectar($con);
