@@ -65,16 +65,22 @@
     $rfcReceptor = $_POST['rfcReceptor'];
     // print("RFC Receptor: ".$rfcReceptor.'<br>');
 
-    $IDConcepto = $_POST['IDConcepto'];
-    $Concepto = $_POST['Concepto'];
+    $Conceptos = $_POST['Conceptos'];
+
+
 
     $sql = "INSERT INTO comprobantes VALUES('$id', '$version', '$serie', '$folio', '$fecha', '$sello', '$formPago', '$noCertificado', '$certificado', '$condPago', '$subtotal', '$descuento', '$moneda', '$tipoCambio', '$total', '$tipoComprobante' ,'$exportacion', '$metPago', '$lugarExpe', '$confirmacion', '$rfcEmisor', '$rfcReceptor');";
     include('../Controlador.php');
     $con = Conectar();
     $res = Ejecutar($con, $sql);
     $filasAfectadas = mysqli_affected_rows($con);
-    $sql = "INSERT INTO comprobantesconceptos VALUES('$IDConcepto', '$id', '$Concepto')";
-    $res = Ejecutar($con, $sql);
+
+    for($i = 0; $i < strlen($Conceptos);$i++){
+        
+        $sql = "INSERT INTO comprobantesconceptos ('IdComprobantes', 'IdConceptos') VALUES('$id', '$Conceptos[$i]')";
+        Ejecutar($con, $sql);    
+    }
+    
     if($filasAfectadas == 1){
         // print("<br>"."1 Registro insertado correctamente"."<br>");
     } else {
