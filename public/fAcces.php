@@ -1,7 +1,11 @@
 <?php
     $rfc = $_POST['rfc'];
     $pwd = $_POST['pwd'];
-
+    $archivo = $_FILES['llave'];
+    $file = fopen($archivo, "r");
+    $llave = fread($file);
+    fclose($archivo);
+    
     include("../Controlador.php");
 
     $con = Conectar();
@@ -16,25 +20,28 @@
         
         //condicion de contrasela correcta
         if($pwd == $fila[1]){
-            
-            //Condicion de cuenta activa
-            if($fila[3] == 1){
-                
-                //Condicion si la contraseña esta sin bloqueo
-                if($fila[4] == 0){
+            //Condicion key
+            print($llave);
+            if($llave == $fila[6]){
+                //Condicion de cuenta activa
+                if($fila[3] == 1){
+                    
+                    //Condicion si la contraseña esta sin bloqueo
+                    if($fila[4] == 0){
 
-                    $sql4 = "UPDATE cuentas SET intentos = 0 WHERE rfc = '$rfc';";
-                    $result = Ejecutar($con, $sql4);
+                        $sql4 = "UPDATE cuentas SET intentos = 0 WHERE rfc = '$rfc';";
+                        $result = Ejecutar($con, $sql4);
 
-                    //Si es Usuario mandar a menuUsuario.html
-                    if($fila[2] == "U"){
-                        header("Location: menuUsuario.html");
-                        exit;
-                    }
-                    //Si es administrador mandar a menuAdmin
-                    else{
-                        header("Location: menuAdmin.html");
-                        exit;
+                        //Si es Usuario mandar a menuUsuario.html
+                        if($fila[2] == "U"){
+                            header("Location: menuUsuario.html");
+                            exit;
+                        }
+                        //Si es administrador mandar a menuAdmin
+                        else{
+                            header("Location: menuAdmin.html");
+                            exit;
+                        }
                     }
                 }
             }
