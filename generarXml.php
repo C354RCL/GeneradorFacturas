@@ -2,6 +2,7 @@
 include("Controlador.php");
 $con = Conectar();
 
+$folio = $_POST['folio'];
 
 $conceptos = '';
 $subtotal = 0;
@@ -9,7 +10,7 @@ $impuestototal = 0;
 $total = 0;
 
 //Vista Comprobantes Completa
-$sql = "SELECT * FROM ComprobantesCompleta WHERE folio = 1584789415;";
+$sql = "SELECT * FROM ComprobantesCompleta WHERE folio = $folio;";
 $result = Ejecutar($con, $sql);
 //Obtenemos el array con el resultado del query
 $fila = mysqli_fetch_row($result);
