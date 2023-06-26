@@ -13,34 +13,32 @@
     if($nFilas == 1){
         print("\nEl usuario existe\n");
         $fila=mysqli_fetch_row($result);
+        
+        //condicion de contrasela correcta
         if($pwd == $fila[1]){
-            // print("\nContraseña correcta\n");
+            
+            //Condicion de cuenta activa
             if($fila[3] == 1){
-                // print("\nLa cuenta esta activa\n");
-
+                
+                //Condicion si la contraseña esta sin bloqueo
                 if($fila[4] == 0){
-                    print("\nSin bloqueo\n");
-                    print("Entrar");
+
                     $sql4 = "UPDATE cuentas SET intentos = 0 WHERE rfc = '$rfc';";
                     $result = Ejecutar($con, $sql4);
+
+                    //Si es Usuario mandar a menuUsuario.html
                     if($fila[2] == "U"){
-                        // print("\nUsuario");
                         header("Location: menuUsuario.html");
                         exit;
-                    }else{
-                        // print("\nAdministrador\n"); 
+                    }
+                    //Si es administrador mandar a menuAdmin
+                    else{
                         header("Location: menuAdmin.html");
                         exit;
                     }
-
-                }else{
-                    // print("\nBloqueada\n");
                 }
-
-            }else{
-                // print("\nLa no cuenta esta activa\n");
             }
-        }else{
+        } else{
             print("\nContraseña incorrecta\n");
             $sql2 = "UPDATE cuentas SET intentos = intento+1 WHERE rfc = '$rfc';";
             $result = Ejecutar($con, $sql2);
@@ -49,7 +47,7 @@
                 $result = Ejecutar($con, $sql3);
             }
         }
-    }else{
+    } else{
         print("\nEl usuario no existe\n");
     }
 
