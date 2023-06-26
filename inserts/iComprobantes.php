@@ -29,19 +29,19 @@
     $condPago = $_POST['condPago'];
     // print("Condiciones Pago: ".$condPago.'<br>');
 
-    $subtotal = $_POST['subtotal'];
+    $subtotal = 0;
     // print("Subtotal: ".$subtotal.'<br>');
 
-    $descuento = $_POST['descuento'];
+    $descuento = 0;
     // print("Descuento: ".$descuento.'<br>');
 
     $moneda = $_POST['moneda'];
     // print("Moneda: ".$moneda.'<br>');
 
-    $tipoCambio = $_POST['tipoCambio'];
+    $tipoCambio = 0;
     // print("Tipo Cambio: ".$tipoCambio.'<br>');
 
-    $total = $_POST['total'];
+    $total = 0;
     // print("Total: ".$total.'<br>');
 
     $tipoComprobante = $_POST['tipoComprobante'];
@@ -56,7 +56,7 @@
     $lugarExpe = $_POST['lugarExpe'];
     // print("Lugar Expedicion: ".$lugarExpe.'<br>');
 
-    $confirmacion = $_POST['confirmacion'];
+    $confirmacion = "";
     // print("Confirmacion: ".$confirmacion.'<br>');
 
     $rfcEmisor = $_POST['rfcEmisor'];
@@ -77,7 +77,7 @@
 
     for($i = 0; $i < strlen($Conceptos);$i++){
         
-        $sql = "INSERT INTO comprobantesconceptos ('IdComprobantes', 'IdConceptos') VALUES('$id', '$Conceptos[$i]')";
+        $sql = "INSERT INTO comprobantesconceptos (IdComprobantes, IdConceptos) VALUES ('$id', '$Conceptos[$i]');";
         Ejecutar($con, $sql);    
     }
     
