@@ -300,6 +300,7 @@
     $pdf->SETXY(70, 275);
     $pdf->CELL(65, 3, 'Este documento es una representacion impresa de un CFDI','' , '', 'C');
 
+    $pdf->Output('I', './Files/'.$fila[3].'.pdf');
     $pdf->Output('F', './Files/'.$fila[3].'.pdf');
 
 
