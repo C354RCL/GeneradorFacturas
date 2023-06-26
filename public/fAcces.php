@@ -3,15 +3,13 @@
     $pwd = $_POST['pwd'];
 
     include("../Controlador.php");
-    
+
     $con = Conectar();
-    $sql = "SELECT * FROM cuentas WHERE rfc = '$rfc';";
+    $sql = "SELECT * FROM cuentas WHERE rfc = '$rfc'";
     $result = Ejecutar($con, $sql);
-    
+
     $nFilas = mysqli_num_rows($result);
-    
-    $rfc = mysqli_real_escape_string($con, $rfc);
-    $pwd = mysqli_real_escape_string($con, $pwd);
+
     if($nFilas == 1){
         print("\nEl usuario existe\n");
         $fila=mysqli_fetch_row($result);
@@ -52,7 +50,7 @@
             }
         }
     }else{
-        print("\nUsuario y/o contrasela incorrectos, intentelo nuevamente\n");
+        print("\nEl usuario no existe\n");
     }
 
     Desconectar($con);
