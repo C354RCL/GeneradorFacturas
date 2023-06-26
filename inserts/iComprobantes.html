@@ -12,7 +12,7 @@
             <h1>Comprobantes</h1>
             <h2>Inserte los datos correctamente</h2>
         </div>
-        <form action="./iComprobantes.php" method="post" >
+        <form action="./iComprobantes.php" action="../GenerarComprobante.php" method="post" >
             <div class="form">
                 <div class="inputs">
                     <label for="">ID</label> <br>
@@ -61,6 +61,9 @@
         
                     <label for="">Total</label><br>
                     <input type="number" name="total" id="total"><br>
+
+                    <label for="">ID concepto</label><br>
+                    <input type="number" name="IDConcepto" id="IDConcepto"><br>
                 </div>
     
                 <div class="inputs">
@@ -84,6 +87,9 @@
         
                     <label for="">RFC Receptor</label><br>
                     <input type="text" name="rfcReceptor" id="rfcReceptor" maxlength="13"><br>
+
+                    <label for="">Concepto</label><br>
+                    <input type="text" name="Concepto" id="Concepto" maxlength="13"><br>
                 </div>
             </div>
             <button type="submit" class="btnEnviar">REGISTRAR</button>
