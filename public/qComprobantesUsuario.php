@@ -2,6 +2,7 @@
 // Incluir el archivo para verificar la sesión
 include("../verificar_sesion.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +17,8 @@ include("../verificar_sesion.php");
         <?php
             include('../Controlador.php');
             $con = Conectar();
-            //Obtenemos el valor del formulario
-            $rfc = $_POST['rfc'];
             //Hacemos la consulta
-            $sql = "SELECT id, folio, fecha, total, rfcEmisor, rfcReceptor FROM comprobantes WHERE rfcEmisor = '$rfc';";
+            $sql = "SELECT id, folio, fecha, total, rfcEmisor, rfcReceptor FROM comprobantes WHERE rfcEmisor = '$usuario';";
             //Ejecutamos la consulta
             $res = Ejecutar($con, $sql);
             //Obtenemos el numero de filas que arroga la consula 
@@ -65,7 +64,7 @@ include("../verificar_sesion.php");
             print('</table>');
             print("<br><h4>Cantidad de comprobantes: $cantidadFilas</h4> ");
 
-            $sql = "SELECT folio FROM comprobantes WHERE rfcEmisor = '$rfc'";
+            $sql = "SELECT folio FROM comprobantes WHERE rfcEmisor = '$usuario'";
             $res = Ejecutar($con, $sql);
             $folio = mysqli_fetch_row($res);
         ?>

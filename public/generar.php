@@ -1,3 +1,7 @@
+<?php
+// Incluir el archivo para verificar la sesión
+include("../verificar_sesion.php");
+?>
 
 
 <!DOCTYPE html>

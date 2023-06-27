@@ -1,3 +1,8 @@
+<?php
+// Incluir el archivo para verificar la sesión
+include("../verificar_sesion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +14,7 @@
 <body>
     <h1>Consulta de comprobantes</h1>
     <form action="qComprobantes.php" class="form" method="post">
-        <label for="">Ingrese su RFC para ver sus comprobantes existentes</label><br>
+        <label for="">Ingrese un RFC para ver sus comprobantes existentes</label><br>
         <input type="text" name="rfc" id="rfc"><br>
         <button type="submit" class="generar">CONSULTAR</button>
     </form>

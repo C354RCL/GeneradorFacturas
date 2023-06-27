@@ -1,3 +1,8 @@
+<?php
+// Incluir el archivo para verificar la sesión
+include("../verificar_sesion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +15,14 @@
     <h1>BIENVENIDO</h1>
     <div class="container2">
         <div class="card2">
-            <a href="../inserts/iComprobantes.html">
+            <a href="../inserts/Comprobantes.php">
                 <img src="./img/crear.png" alt="">
                 <h2>Generar</h2>
             </a>
         </div>
 
         <div class="card2">
-            <a href="consultar.html">
+            <a href="qComprobantesUsuario.php">
                 <img src="./img/consulta.png" alt="">
                 <h2>Consultar</h2>
             </a>
@@ -27,7 +32,7 @@
     
     <div class="container2">
         <div class="card2">
-            <a href="eliminar.html">
+            <a href="eliminarUsuario.php">
                 <img src="./img/eliminar.png" alt="">
                 <h2>Eliminar</h2>
             </a>

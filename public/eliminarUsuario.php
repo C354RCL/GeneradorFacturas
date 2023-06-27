@@ -1,3 +1,8 @@
+<?php
+// Incluir el archivo para verificar la sesión
+include("../verificar_sesion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,7 @@
 </head>
 <body>
     <h1>Eliminar un Comprobante</h1>
-    <form action="eliminar.php" class="form" method="post">
+    <form action="qEliminarUsuario.php" class="form" method="post">
         <label for="">Ingrese el folio del comprobante a eliminar</label><br>
         <input type="text" name="folio" id="folio">
         <button type="submit" id="eliminar">ELIMINAR</button>
