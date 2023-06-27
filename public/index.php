@@ -16,8 +16,8 @@
         <label for="">CONTRASEÑA</label><br>
         <input type="password" name="pwd" id="pwd" /> <br />
 
-        <label for="">KEY</label><br>
-        <input type="file" name="file"/> <br />
+        <!-- <label for="">KEY</label><br>
+        <input type="file" name="file"/> <br /> -->
 
         <button type="submit">ENTRAR</button>
       </form>

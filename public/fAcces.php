@@ -23,28 +23,28 @@ if ($nFilas == 1) {
     if ($pwd == $fila[1]) {
        
 
-            // Condición de cuenta activa
-            if ($fila[3] == 1) {
+        // Condición de cuenta activa
+        if ($fila[3] == 1) {
 
-                // Condición si la contraseña no está bloqueada
-                if ($fila[4] == 0) {
+            // Condición si la contraseña no está bloqueada
+            if ($fila[4] == 0) {
 
-                    $sql4 = "UPDATE cuentas SET intentos = 0 WHERE rfc = '$rfc';";
-                    $result = Ejecutar($con, $sql4);
+                $sql4 = "UPDATE cuentas SET intentos = 0 WHERE rfc = '$rfc';";
+                $result = Ejecutar($con, $sql4);
 
-                    // Si es usuario, redirigir a menuUsuario.php
-                    if ($fila[2] == "U") {
-                        $_SESSION['usuario'] = $rfc;
-                        header("Location: menuUsuario.php");
-                        exit;
-                    }
-                    // Si es administrador, redirigir a menuAdmin.php
-                    else {
-                        $_SESSION['usuario'] = $rfc;
-                        header("Location: menuAdmin.php");
-                        exit;
-                    }
+                // Si es usuario, redirigir a menuUsuario.php
+                if ($fila[2] == "U") {
+                    $_SESSION['usuario'] = $rfc;
+                     header("Location: menuUsuario.php");
+                    exit;
                 }
+                    // Si es administrador, redirigir a menuAdmin.php
+                else {
+                    $_SESSION['usuario'] = $rfc;
+                    header("Location: menuAdmin.php");
+                    exit;
+                }
+            }
         
 
         }
