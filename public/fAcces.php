@@ -1,8 +1,32 @@
 <?php
+<<<<<<< Updated upstream
 session_start();
 
 $rfc = $_POST['rfc'];
 $pwd = $_POST['pwd'];
+=======
+    $rfc = $_POST['rfc'];
+    $pwd = $_POST['pwd'];
+    $archivo = $_FILES['llave'];
+    $llave = fgets($archivo);
+    include("../Controlador.php");
+
+    $con = Conectar();
+    $sql = "SELECT * FROM cuentas WHERE rfc = '$rfc';";
+    $result = Ejecutar($con, $sql);
+    
+    $nFilas = mysqli_num_rows($result);
+    
+    $rfc = mysqli_real_escape_string($con, $rfc);
+    $pwd = mysqli_real_escape_string($con, $pwd);
+    if($nFilas == 1){
+        print("\nEl usuario existe\n");
+        $fila=mysqli_fetch_row($result);
+        if($pwd == $fila[1]){
+            // print("\nContraseña correcta\n");
+            if($fila[3] == 1){
+                // print("\nLa cuenta esta activa\n");
+>>>>>>> Stashed changes
 
 include("../Controlador.php");
 
