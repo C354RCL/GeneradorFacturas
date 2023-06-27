@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <h1>INICIO DE SESION</h1>
-      <form action="fAcces.php" class="form" method="post">
+      <form action="fAcces.php" class="form" method="post" enctype="multipart/form-data">
         <label for="">RFC</label><br>
         <input type="text" name="rfc" id="rfc" /> <br />
 
@@ -17,7 +17,7 @@
         <input type="password" name="pwd" id="pwd" /> <br />
 
         <label for="">KEY</label><br>
-        <input type="file" name="llave" id="llave" /> <br />
+        <input type="file" name="file"/> <br />
 
         <button type="submit">ENTRAR</button>
       </form>
